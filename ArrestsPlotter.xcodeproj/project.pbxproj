@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7CBA53C16F35BA9001972D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA53B16F35BA9001972D7 /* UIKit.framework */; };
+		A7CBA53E16F35BA9001972D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA53D16F35BA9001972D7 /* Foundation.framework */; };
+		A7CBA54016F35BA9001972D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA53F16F35BA9001972D7 /* CoreGraphics.framework */; };
+		A7CBA54616F35BA9001972D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA54416F35BA9001972D7 /* InfoPlist.strings */; };
+		A7CBA54816F35BA9001972D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA54716F35BA9001972D7 /* main.m */; };
+		A7CBA54C16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA54B16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m */; };
+		A7CBA54E16F35BA9001972D7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA54D16F35BA9001972D7 /* Default.png */; };
+		A7CBA55016F35BA9001972D7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA54F16F35BA9001972D7 /* Default@2x.png */; };
+		A7CBA55216F35BA9001972D7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA55116F35BA9001972D7 /* Default-568h@2x.png */; };
+		A7CBA55516F35BA9001972D7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA55316F35BA9001972D7 /* MainStoryboard.storyboard */; };
+		A7CBA55816F35BA9001972D7 /* ArrestsPlotterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA55716F35BA9001972D7 /* ArrestsPlotterViewController.m */; };
+		A7CBA56016F35C5C001972D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA55E16F35C4C001972D7 /* MapKit.framework */; };
+		A7CBA5B416F36342001972D7 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56316F36342001972D7 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5B516F36342001972D7 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56616F36342001972D7 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5B616F36342001972D7 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56816F36342001972D7 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5B716F36342001972D7 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56A16F36342001972D7 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5B816F36342001972D7 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56C16F36342001972D7 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5B916F36342001972D7 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA56E16F36342001972D7 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5BA16F36342001972D7 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA57216F36342001972D7 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5BB16F36342001972D7 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA57416F36342001972D7 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5DB16F36355001972D7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA5DA16F36355001972D7 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7CBA5DF16F36603001972D7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA5DE16F36603001972D7 /* MBProgressHUD.m */; };
+		A7CBA5E616F3666D001972D7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA5E416F36659001972D7 /* MobileCoreServices.framework */; };
+		A7CBA5E716F3666D001972D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA5E216F36652001972D7 /* SystemConfiguration.framework */; };
+		A7CBA5E816F3666D001972D7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA5E016F36642001972D7 /* CFNetwork.framework */; };
+		A7CBA5EB16F3668E001972D7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA5E916F36680001972D7 /* libz.dylib */; };
+		A7CBA5ED16F368C3001972D7 /* command.json in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA5EC16F368C3001972D7 /* command.json */; };
+		A7CBA5F016F374A8001972D7 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CBA5EF16F374A8001972D7 /* MyLocation.m */; };
+		A7CBA5F316F37E96001972D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA5F116F37E88001972D7 /* AddressBook.framework */; };
+		A7CBA5F516F382CE001972D7 /* arrest.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CBA5F416F382CE001972D7 /* arrest.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A7CBA53816F35BA9001972D7 /* ArrestsPlotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArrestsPlotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CBA53B16F35BA9001972D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A7CBA53D16F35BA9001972D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A7CBA53F16F35BA9001972D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A7CBA54316F35BA9001972D7 /* ArrestsPlotter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArrestsPlotter-Info.plist"; sourceTree = "<group>"; };
+		A7CBA54516F35BA9001972D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7CBA54716F35BA9001972D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A7CBA54916F35BA9001972D7 /* ArrestsPlotter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArrestsPlotter-Prefix.pch"; sourceTree = "<group>"; };
+		A7CBA54A16F35BA9001972D7 /* ArrestsPlotterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrestsPlotterAppDelegate.h; sourceTree = "<group>"; };
+		A7CBA54B16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrestsPlotterAppDelegate.m; sourceTree = "<group>"; };
+		A7CBA54D16F35BA9001972D7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A7CBA54F16F35BA9001972D7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A7CBA55116F35BA9001972D7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A7CBA55416F35BA9001972D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A7CBA55616F35BA9001972D7 /* ArrestsPlotterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrestsPlotterViewController.h; sourceTree = "<group>"; };
+		A7CBA55716F35BA9001972D7 /* ArrestsPlotterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrestsPlotterViewController.m; sourceTree = "<group>"; };
+		A7CBA55E16F35C4C001972D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A7CBA56216F36342001972D7 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		A7CBA56316F36342001972D7 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		A7CBA56416F36342001972D7 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		A7CBA56516F36342001972D7 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		A7CBA56616F36342001972D7 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		A7CBA56716F36342001972D7 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		A7CBA56816F36342001972D7 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		A7CBA56916F36342001972D7 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		A7CBA56A16F36342001972D7 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		A7CBA56B16F36342001972D7 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		A7CBA56C16F36342001972D7 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		A7CBA56D16F36342001972D7 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		A7CBA56E16F36342001972D7 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		A7CBA56F16F36342001972D7 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		A7CBA57016F36342001972D7 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		A7CBA57116F36342001972D7 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		A7CBA57216F36342001972D7 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		A7CBA57316F36342001972D7 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		A7CBA57416F36342001972D7 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		A7CBA57516F36342001972D7 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		A7CBA5D916F36355001972D7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A7CBA5DA16F36355001972D7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A7CBA5DD16F36603001972D7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A7CBA5DE16F36603001972D7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A7CBA5E016F36642001972D7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A7CBA5E216F36652001972D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A7CBA5E416F36659001972D7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A7CBA5E916F36680001972D7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A7CBA5EC16F368C3001972D7 /* command.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = command.json; sourceTree = "<group>"; };
+		A7CBA5EE16F374A8001972D7 /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		A7CBA5EF16F374A8001972D7 /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
+		A7CBA5F116F37E88001972D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		A7CBA5F416F382CE001972D7 /* arrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrest.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7CBA53516F35BA9001972D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CBA5F316F37E96001972D7 /* AddressBook.framework in Frameworks */,
+				A7CBA5EB16F3668E001972D7 /* libz.dylib in Frameworks */,
+				A7CBA5E616F3666D001972D7 /* MobileCoreServices.framework in Frameworks */,
+				A7CBA5E716F3666D001972D7 /* SystemConfiguration.framework in Frameworks */,
+				A7CBA5E816F3666D001972D7 /* CFNetwork.framework in Frameworks */,
+				A7CBA56016F35C5C001972D7 /* MapKit.framework in Frameworks */,
+				A7CBA53C16F35BA9001972D7 /* UIKit.framework in Frameworks */,
+				A7CBA53E16F35BA9001972D7 /* Foundation.framework in Frameworks */,
+				A7CBA54016F35BA9001972D7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7CBA52F16F35BA9001972D7 = {
+			isa = PBXGroup;
+			children = (
+				A7CBA54116F35BA9001972D7 /* ArrestsPlotter */,
+				A7CBA56116F3630D001972D7 /* ASIHTTPRequest */,
+				A7CBA5DC16F365E4001972D7 /* MBProgressHUD */,
+				A7CBA53A16F35BA9001972D7 /* Frameworks */,
+				A7CBA53916F35BA9001972D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7CBA53916F35BA9001972D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA53816F35BA9001972D7 /* ArrestsPlotter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7CBA53A16F35BA9001972D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA5F116F37E88001972D7 /* AddressBook.framework */,
+				A7CBA5E916F36680001972D7 /* libz.dylib */,
+				A7CBA5E416F36659001972D7 /* MobileCoreServices.framework */,
+				A7CBA5E216F36652001972D7 /* SystemConfiguration.framework */,
+				A7CBA5E016F36642001972D7 /* CFNetwork.framework */,
+				A7CBA55E16F35C4C001972D7 /* MapKit.framework */,
+				A7CBA53B16F35BA9001972D7 /* UIKit.framework */,
+				A7CBA53D16F35BA9001972D7 /* Foundation.framework */,
+				A7CBA53F16F35BA9001972D7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7CBA54116F35BA9001972D7 /* ArrestsPlotter */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA54A16F35BA9001972D7 /* ArrestsPlotterAppDelegate.h */,
+				A7CBA54B16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m */,
+				A7CBA55316F35BA9001972D7 /* MainStoryboard.storyboard */,
+				A7CBA55616F35BA9001972D7 /* ArrestsPlotterViewController.h */,
+				A7CBA55716F35BA9001972D7 /* ArrestsPlotterViewController.m */,
+				A7CBA54216F35BA9001972D7 /* Supporting Files */,
+				A7CBA5EE16F374A8001972D7 /* MyLocation.h */,
+				A7CBA5EF16F374A8001972D7 /* MyLocation.m */,
+			);
+			path = ArrestsPlotter;
+			sourceTree = "<group>";
+		};
+		A7CBA54216F35BA9001972D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA5F416F382CE001972D7 /* arrest.png */,
+				A7CBA5EC16F368C3001972D7 /* command.json */,
+				A7CBA54316F35BA9001972D7 /* ArrestsPlotter-Info.plist */,
+				A7CBA54416F35BA9001972D7 /* InfoPlist.strings */,
+				A7CBA54716F35BA9001972D7 /* main.m */,
+				A7CBA54916F35BA9001972D7 /* ArrestsPlotter-Prefix.pch */,
+				A7CBA54D16F35BA9001972D7 /* Default.png */,
+				A7CBA54F16F35BA9001972D7 /* Default@2x.png */,
+				A7CBA55116F35BA9001972D7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7CBA56116F3630D001972D7 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA56216F36342001972D7 /* ASIAuthenticationDialog.h */,
+				A7CBA56316F36342001972D7 /* ASIAuthenticationDialog.m */,
+				A7CBA56416F36342001972D7 /* ASICacheDelegate.h */,
+				A7CBA56516F36342001972D7 /* ASIDataCompressor.h */,
+				A7CBA56616F36342001972D7 /* ASIDataCompressor.m */,
+				A7CBA56716F36342001972D7 /* ASIDataDecompressor.h */,
+				A7CBA56816F36342001972D7 /* ASIDataDecompressor.m */,
+				A7CBA56916F36342001972D7 /* ASIDownloadCache.h */,
+				A7CBA56A16F36342001972D7 /* ASIDownloadCache.m */,
+				A7CBA56B16F36342001972D7 /* ASIFormDataRequest.h */,
+				A7CBA56C16F36342001972D7 /* ASIFormDataRequest.m */,
+				A7CBA56D16F36342001972D7 /* ASIHTTPRequest.h */,
+				A7CBA56E16F36342001972D7 /* ASIHTTPRequest.m */,
+				A7CBA56F16F36342001972D7 /* ASIHTTPRequestConfig.h */,
+				A7CBA57016F36342001972D7 /* ASIHTTPRequestDelegate.h */,
+				A7CBA57116F36342001972D7 /* ASIInputStream.h */,
+				A7CBA57216F36342001972D7 /* ASIInputStream.m */,
+				A7CBA57316F36342001972D7 /* ASINetworkQueue.h */,
+				A7CBA57416F36342001972D7 /* ASINetworkQueue.m */,
+				A7CBA57516F36342001972D7 /* ASIProgressDelegate.h */,
+				A7CBA5D916F36355001972D7 /* Reachability.h */,
+				A7CBA5DA16F36355001972D7 /* Reachability.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		A7CBA5DC16F365E4001972D7 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A7CBA5DD16F36603001972D7 /* MBProgressHUD.h */,
+				A7CBA5DE16F36603001972D7 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7CBA53716F35BA9001972D7 /* ArrestsPlotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7CBA55B16F35BA9001972D7 /* Build configuration list for PBXNativeTarget "ArrestsPlotter" */;
+			buildPhases = (
+				A7CBA53416F35BA9001972D7 /* Sources */,
+				A7CBA53516F35BA9001972D7 /* Frameworks */,
+				A7CBA53616F35BA9001972D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArrestsPlotter;
+			productName = ArrestsPlotter;
+			productReference = A7CBA53816F35BA9001972D7 /* ArrestsPlotter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7CBA53016F35BA9001972D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ArrestsPlotter;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = nmcconnell.com;
+			};
+			buildConfigurationList = A7CBA53316F35BA9001972D7 /* Build configuration list for PBXProject "ArrestsPlotter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A7CBA52F16F35BA9001972D7;
+			productRefGroup = A7CBA53916F35BA9001972D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7CBA53716F35BA9001972D7 /* ArrestsPlotter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7CBA53616F35BA9001972D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CBA54616F35BA9001972D7 /* InfoPlist.strings in Resources */,
+				A7CBA54E16F35BA9001972D7 /* Default.png in Resources */,
+				A7CBA55016F35BA9001972D7 /* Default@2x.png in Resources */,
+				A7CBA55216F35BA9001972D7 /* Default-568h@2x.png in Resources */,
+				A7CBA55516F35BA9001972D7 /* MainStoryboard.storyboard in Resources */,
+				A7CBA5ED16F368C3001972D7 /* command.json in Resources */,
+				A7CBA5F516F382CE001972D7 /* arrest.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7CBA53416F35BA9001972D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CBA54816F35BA9001972D7 /* main.m in Sources */,
+				A7CBA54C16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m in Sources */,
+				A7CBA55816F35BA9001972D7 /* ArrestsPlotterViewController.m in Sources */,
+				A7CBA5B416F36342001972D7 /* ASIAuthenticationDialog.m in Sources */,
+				A7CBA5B516F36342001972D7 /* ASIDataCompressor.m in Sources */,
+				A7CBA5B616F36342001972D7 /* ASIDataDecompressor.m in Sources */,
+				A7CBA5B716F36342001972D7 /* ASIDownloadCache.m in Sources */,
+				A7CBA5B816F36342001972D7 /* ASIFormDataRequest.m in Sources */,
+				A7CBA5B916F36342001972D7 /* ASIHTTPRequest.m in Sources */,
+				A7CBA5BA16F36342001972D7 /* ASIInputStream.m in Sources */,
+				A7CBA5BB16F36342001972D7 /* ASINetworkQueue.m in Sources */,
+				A7CBA5DB16F36355001972D7 /* Reachability.m in Sources */,
+				A7CBA5DF16F36603001972D7 /* MBProgressHUD.m in Sources */,
+				A7CBA5F016F374A8001972D7 /* MyLocation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A7CBA54416F35BA9001972D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7CBA54516F35BA9001972D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7CBA55316F35BA9001972D7 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7CBA55416F35BA9001972D7 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7CBA55916F35BA9001972D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A7CBA55A16F35BA9001972D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7CBA55C16F35BA9001972D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArrestsPlotter/ArrestsPlotter-Prefix.pch";
+				INFOPLIST_FILE = "ArrestsPlotter/ArrestsPlotter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A7CBA55D16F35BA9001972D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArrestsPlotter/ArrestsPlotter-Prefix.pch";
+				INFOPLIST_FILE = "ArrestsPlotter/ArrestsPlotter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7CBA53316F35BA9001972D7 /* Build configuration list for PBXProject "ArrestsPlotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CBA55916F35BA9001972D7 /* Debug */,
+				A7CBA55A16F35BA9001972D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7CBA55B16F35BA9001972D7 /* Build configuration list for PBXNativeTarget "ArrestsPlotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CBA55C16F35BA9001972D7 /* Debug */,
+				A7CBA55D16F35BA9001972D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7CBA53016F35BA9001972D7 /* Project object */;
+}

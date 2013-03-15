@@ -1,0 +1,62 @@
+//
+//  MyLocation.m
+//  ArrestsPlotter
+//
+//  Created by Nathanial L. McConnell on 3/15/13.
+//  Copyright (c) 2013 nmcconnell.com. All rights reserved.
+//
+
+#import "MyLocation.h"
+#import <AddressBook/AddressBook.h>
+
+@interface MyLocation ()
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *address;
+@property (assign, nonatomic) CLLocationCoordinate2D theCoordinate;
+@end
+
+@implementation MyLocation
+
+- (id)initWithName:(NSString *)name address:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate
+{
+    if (self = [super init]) {
+        if ([name isKindOfClass:[NSString class]]) {
+            self.name = name;
+        } else {
+            self.name = @"Unknown charge";
+        }
+        self.address = address;
+        self.theCoordinate = coordinate;
+    }
+    
+    return self;
+}
+
+- (NSString *)title
+{
+    return  _name;
+}
+
+- (NSString *)subtitle
+{
+    return _address;
+}
+
+- (CLLocationCoordinate2D)coordinate
+{
+    return _theCoordinate;
+}
+
+- (MKMapItem *)mapItem
+{
+    NSDictionary *addressDict = @{(NSString *)kABPersonAddressStreetKey : _address};
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:addressDict];
+    
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    mapItem.name = self.title;
+    
+    return mapItem;
+}
+
+@end
