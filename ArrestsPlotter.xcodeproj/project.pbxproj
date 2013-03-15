@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A71F048916F38C010090D82E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047116F38C010090D82E /* ASIAuthenticationDialog.m */; };
-		A71F048A16F38C010090D82E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047416F38C010090D82E /* ASIDataCompressor.m */; };
-		A71F048B16F38C010090D82E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047616F38C010090D82E /* ASIDataDecompressor.m */; };
-		A71F048C16F38C010090D82E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047816F38C010090D82E /* ASIDownloadCache.m */; };
-		A71F048D16F38C010090D82E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047A16F38C010090D82E /* ASIFormDataRequest.m */; };
-		A71F048E16F38C010090D82E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047C16F38C010090D82E /* ASIHTTPRequest.m */; };
-		A71F048F16F38C010090D82E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048016F38C010090D82E /* ASIInputStream.m */; };
-		A71F049016F38C010090D82E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048216F38C010090D82E /* ASINetworkQueue.m */; };
-		A71F049116F38C010090D82E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048516F38C010090D82E /* Reachability.m */; };
+		A71F048916F38C010090D82E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047116F38C010090D82E /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048A16F38C010090D82E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047416F38C010090D82E /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048B16F38C010090D82E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047616F38C010090D82E /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048C16F38C010090D82E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047816F38C010090D82E /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048D16F38C010090D82E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047A16F38C010090D82E /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048E16F38C010090D82E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047C16F38C010090D82E /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F048F16F38C010090D82E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048016F38C010090D82E /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F049016F38C010090D82E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048216F38C010090D82E /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A71F049116F38C010090D82E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048516F38C010090D82E /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A71F049216F38C010090D82E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F048816F38C010090D82E /* MBProgressHUD.m */; };
 		A7CBA53C16F35BA9001972D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA53B16F35BA9001972D7 /* UIKit.framework */; };
 		A7CBA53E16F35BA9001972D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CBA53D16F35BA9001972D7 /* Foundation.framework */; };
