@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>33C1201C-811D-4B1C-AE87-BE1F947A4BC6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>23F01D42AB62C56F0533B3AA647C265ED1989C47</key>
+		<string>https://github.com/FluxAugur/ArrestsPlotter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ArrestsPlotter.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>23F01D42AB62C56F0533B3AA647C265ED1989C47</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/FluxAugur/ArrestsPlotter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>23F01D42AB62C56F0533B3AA647C265ED1989C47</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>23F01D42AB62C56F0533B3AA647C265ED1989C47</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ArrestsPlotter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

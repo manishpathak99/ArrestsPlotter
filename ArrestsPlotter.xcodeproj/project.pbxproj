@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26C4E6FA1B73829F00415FA4 /* MapFilterUiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4E6F91B73829F00415FA4 /* MapFilterUiModel.m */; };
+		26C4E6FD1B73830800415FA4 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4E6FC1B73830800415FA4 /* FilterView.m */; };
+		26C4E7041B73845500415FA4 /* green-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4E7011B73845500415FA4 /* green-circle.png */; };
+		26C4E7071B73852800415FA4 /* checkbox_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4E7051B73852800415FA4 /* checkbox_check.png */; };
+		26C4E7081B73852800415FA4 /* checkbox_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4E7061B73852800415FA4 /* checkbox_normal.png */; };
 		A71F048916F38C010090D82E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047116F38C010090D82E /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A71F048A16F38C010090D82E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047416F38C010090D82E /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A71F048B16F38C010090D82E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F047616F38C010090D82E /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -40,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26C4E6F81B73829F00415FA4 /* MapFilterUiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapFilterUiModel.h; sourceTree = "<group>"; };
+		26C4E6F91B73829F00415FA4 /* MapFilterUiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapFilterUiModel.m; sourceTree = "<group>"; };
+		26C4E6FB1B73830800415FA4 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		26C4E6FC1B73830800415FA4 /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		26C4E7011B73845500415FA4 /* green-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-circle.png"; sourceTree = "<group>"; };
+		26C4E7051B73852800415FA4 /* checkbox_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_check.png; sourceTree = "<group>"; };
+		26C4E7061B73852800415FA4 /* checkbox_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_normal.png; sourceTree = "<group>"; };
 		A71F047016F38C010090D82E /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A71F047116F38C010090D82E /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		A71F047216F38C010090D82E /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26C4E6FE1B73845500415FA4 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				26C4E7051B73852800415FA4 /* checkbox_check.png */,
+				26C4E7061B73852800415FA4 /* checkbox_normal.png */,
+				26C4E7011B73845500415FA4 /* green-circle.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		A71F046F16F38C010090D82E /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +210,11 @@
 		A7CBA54116F35BA9001972D7 /* ArrestsPlotter */ = {
 			isa = PBXGroup;
 			children = (
+				26C4E6FE1B73845500415FA4 /* image */,
+				26C4E6F81B73829F00415FA4 /* MapFilterUiModel.h */,
+				26C4E6FB1B73830800415FA4 /* FilterView.h */,
+				26C4E6FC1B73830800415FA4 /* FilterView.m */,
+				26C4E6F91B73829F00415FA4 /* MapFilterUiModel.m */,
 				A7CBA54A16F35BA9001972D7 /* ArrestsPlotterAppDelegate.h */,
 				A7CBA54B16F35BA9001972D7 /* ArrestsPlotterAppDelegate.m */,
 				A7CBA55316F35BA9001972D7 /* MainStoryboard.storyboard */,
@@ -271,8 +298,11 @@
 				A7CBA54616F35BA9001972D7 /* InfoPlist.strings in Resources */,
 				A7CBA54E16F35BA9001972D7 /* Default.png in Resources */,
 				A7CBA55016F35BA9001972D7 /* Default@2x.png in Resources */,
+				26C4E7081B73852800415FA4 /* checkbox_normal.png in Resources */,
+				26C4E7071B73852800415FA4 /* checkbox_check.png in Resources */,
 				A7CBA55216F35BA9001972D7 /* Default-568h@2x.png in Resources */,
 				A7CBA55516F35BA9001972D7 /* MainStoryboard.storyboard in Resources */,
+				26C4E7041B73845500415FA4 /* green-circle.png in Resources */,
 				A7CBA5ED16F368C3001972D7 /* command.json in Resources */,
 				A7CBA5F516F382CE001972D7 /* arrest.png in Resources */,
 			);
@@ -293,12 +323,14 @@
 				A71F048A16F38C010090D82E /* ASIDataCompressor.m in Sources */,
 				A71F048B16F38C010090D82E /* ASIDataDecompressor.m in Sources */,
 				A71F048C16F38C010090D82E /* ASIDownloadCache.m in Sources */,
+				26C4E6FD1B73830800415FA4 /* FilterView.m in Sources */,
 				A71F048D16F38C010090D82E /* ASIFormDataRequest.m in Sources */,
 				A71F048E16F38C010090D82E /* ASIHTTPRequest.m in Sources */,
 				A71F048F16F38C010090D82E /* ASIInputStream.m in Sources */,
 				A71F049016F38C010090D82E /* ASINetworkQueue.m in Sources */,
 				A71F049116F38C010090D82E /* Reachability.m in Sources */,
 				A71F049216F38C010090D82E /* MBProgressHUD.m in Sources */,
+				26C4E6FA1B73829F00415FA4 /* MapFilterUiModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
