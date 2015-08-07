@@ -93,25 +93,15 @@
 -(UIView*) createCircle:(UIImage*)circleImage  x:(int) x y:(int) y{
     //    int imageWidth = 20, imageHeight = 20;
     CGColorRef pixelColor = [[UIColor redColor] CGColor];
-    //    CGColorRef*  aqua = [[UIColor colorWithRed:0.521569 green:0.768627 blue:0.254902 alpha:1] CGColor];
-    //    CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    //    CGContextSetLineWidth(contextRef, 2.0);
-    //    CGContextSetStrokeColorWithColor(contextRef, pixelColor);
     CGRect circlePoint = (CGRectMake(x, y, CIRCLE_FRAME_WIDTH_HEIGHT, CIRCLE_FRAME_WIDTH_HEIGHT));
-    
     UIImageView *uiImageView = [[UIImageView alloc]initWithFrame:(circlePoint)];
     [uiImageView setImage:circleImage];
-//    uiImageView.frame = CGRectMake(x, y, 8, 8);
     return uiImageView;
 }
 
 // method for creating the label
 - (UIView*) createLabel:(NSString*)labelText  x:(int) x y:(int) y{
-    //I have to figure out how to get the lable width and height in advance.
-//    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(x, y, MAX_LABEL_WIDTH, MAX_LABEL_HEIGHT)];//Set frame of label in your viewcontroller.
-//    label.translatesAutoresizingMaskIntoConstraints = NO;
-//    [label addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[label]-(10)-|" options:0 metrics:nil views:@{@"label":label}]];  // horizontal constraint
-//    [label addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[label]" options:0 metrics:nil views:@{@"label":label}]];
+    // knowing the label size in advance
     UILabel *labelForSize=[[UILabel alloc]init];
     [labelForSize setText:labelText];//Set text in label.
     [labelForSize setFont:[UIFont systemFontOfSize:FONT_SIZE]];
@@ -121,40 +111,13 @@
                             attributes:@{ NSFontAttributeName:labelForSize.font }
                             context:nil];
     
-//    float widthIs =
-//    [labelText
-//     boundingRectWithSize:label.frame.size
-//     options:NSStringDrawingUsesLineFragmentOrigin
-//     attributes:@{ NSFontAttributeName:label.font }
-//     context:nil]
-//    .size.width;
-
-
-    
-//    label.frame.size = yourLabelSize.size;
-    
-//    CGSize yourLabelSize = [label.text sizeWithAttributes:@{NSFontAttributeName : [UIFont fontWithName:label.font size:label.size]}];
     y= (y - yourLabelSize.size.height)/2;
     NSLog(@"x:  %d", x);
     NSLog(@"y:  %d", y);
     NSLog(@"width:  %f", yourLabelSize.size.width);
     NSLog(@"height:  %f", yourLabelSize.size.height);
     
-  UILabel  *label =[[UILabel alloc] initWithFrame:CGRectMake(x,y, yourLabelSize.size.width,yourLabelSize.size.height )]; // RectMake(xPos,yPos,Max Width I want, is just a container value);
-   /*
-    label.text = labelText;
-    label.numberOfLines = 0; //will wrap text in new line
-    CGSize maximumLabelSize = CGSizeMake(labelText.length*11, FLT_MAX);
-    [label sizeThatFits:maximumLabelSize];
-*/
-    
-//    CGSize maxSize = CGSizeMake(FLT_MIN, FLT_MAX);
-//    CGRect labRect = [labelText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:label.font} context:nil];
-//    
-//    label.frame = CGRectMake(0, 0, maxSize.width, labRect.size.height);
-//    label.text = labelText;
-    
-    
+  UILabel  *label =[[UILabel alloc] initWithFrame:CGRectMake(x,y, yourLabelSize.size.width,yourLabelSize.size.height )];
     [label setText:labelText];//Set text in label.
     [label setTextColor:[UIColor blackColor]];//Set text color in label.
     [label setTextAlignment:NSTextAlignmentNatural];//Set text alignment in label.
@@ -166,12 +129,8 @@
 //        [label.layer setBorderWidth:2.0f];//Set border width of label.
     //    [label setClipsToBounds:YES];//Set its to YES for Corner radius to work.
     //    [label.layer setBorderColor:[UIColor blackColor].CGColor];//Set Border color.
-    //Calculate the expected size based on the font and linebreak mode of your label
-    // FLT_MAX here simply means no constraint in height
-//    CGSize maximumLabelSize = CGSizeMake(296, FLT_MAX);
-////
-//    CGSize expectedLabelSize = [labelText sizeWithFont:label.font constrainedToSize:maximumLabelSize lineBreakMode:label.lineBreakMode];
     
+
     //adjust the label the the new height.
 //       CGRect newFrame = label.frame;
 //    newFrame.size.height = expectedLabelSize.height;
@@ -192,21 +151,22 @@
         UIImage *circleImage = filterModel.circleImage;
         NSString* labelText = filterModel.labelText;
 
+        /**********  creating the checkbox******************/
         x   =   x   +   CHECKBOX_MARGIN_LEFT;
         y   =   oldy+ (height-CHECKBOX_FRAME_WIDTH_HEIGHT)/2;
-        // creating the checkbox
-        UIView *checkboxView = [self createCheckbox:uiImageSelected uiImageUnselected:uiImageUnselected isSelected:true x:x y:y];
-        x= x+checkboxView.frame.size.width+ CHECKBOX_MARGIN_RIGHT + CIRCLE_MARGIN_LEFT;
-        y = oldy+(height - CIRCLE_FRAME_WIDTH_HEIGHT)/2;
-        // creating the circle
-        UIView *circleView = [self createCircle:circleImage x:x y:y];
-        x= x + circleView.frame.size.width + CIRCLE_MARGIN_RIGHT + LABEL_MARGIN_LEFT;
-        y=oldy + height;
-//        y=oldy ;//+ LABEL_FRAME_MARGIN_HEIGHT;
-        // creating the Label
+        UIView *checkboxView =  [self createCheckbox:uiImageSelected uiImageUnselected:uiImageUnselected isSelected:true x:x y:y];
+        /********** creating the circle********************/
+        x                   =   x+checkboxView.frame.size.width+ CHECKBOX_MARGIN_RIGHT + CIRCLE_MARGIN_LEFT;
+        y                   =   oldy+(height - CIRCLE_FRAME_WIDTH_HEIGHT)/2;
+        UIView *circleView  =   [self createCircle:circleImage x:x y:y];
+        
+        /**********creating the Label************************/
+        x                   =   x + circleView.frame.size.width + CIRCLE_MARGIN_RIGHT + LABEL_MARGIN_LEFT;
+        y                   =   oldy + height;
         UIView *labelView = [self createLabel:labelText x:x y:y];
         x= x + labelView.frame.size.width + LABEL_MARGIN_RIGHT;
         
+        /********** Adding views to all view*****************/
         [self addSubview:checkboxView];
         [self addSubview:circleView];
         [self addSubview:labelView];
