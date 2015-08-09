@@ -7,21 +7,21 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>33C1201C-811D-4B1C-AE87-BE1F947A4BC6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ArrestsPlotter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>23F01D42AB62C56F0533B3AA647C265ED1989C47</key>
-		<string>https://github.com/FluxAugur/ArrestsPlotter.git</string>
+		<string>https://github.com/manishpathak99/ArrestsPlotter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ArrestsPlotter.xcodeproj/project.xcworkspace</string>
+	<string>ArrestsPlotter.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>23F01D42AB62C56F0533B3AA647C265ED1989C47</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/FluxAugur/ArrestsPlotter.git</string>
+	<string>https://github.com/manishpathak99/ArrestsPlotter.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

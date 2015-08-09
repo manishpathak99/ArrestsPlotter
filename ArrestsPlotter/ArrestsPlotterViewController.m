@@ -12,6 +12,10 @@
 #import "MBProgressHUD.h"
 #import "MapFilterUiModel.h"
 #import "FilterView.h"
+#import "FilterBoxView.h"
+
+#define VIEW_WHITE_FRAME_PADDING 10
+#define SPACE_BETWEEN_WHITE_BOX 5
 
 #define METERS_PER_MILE 1609.344
 #define FILTER_VIEW_WIDTH 225
@@ -26,8 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self createFilterView];
+    [self.mapView setFrame:CGRectMake(0, 0, 600, 600)];
+    [self createFilterBoxView];
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,6 +50,12 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5 * METERS_PER_MILE, 0.5 * METERS_PER_MILE);
     
     [_mapView setRegion:viewRegion animated:YES];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //    [self createFilterView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,30 +103,30 @@
     NSArray *data = [root objectForKey:@"data"];
     
     NSArray *keys = [NSArray arrayWithObjects:@"New Delhi", @"Mumbai", @"Gurgaon", nil];
-//    NSArray *objects = [NSArray arrayWithObjects:CLLocationCoordinate2DMake(28.6139, 77.2090), CLLocationCoordinate2DMake(18.9750, 72.8258), CLLocationCoordinate2DMake(28.4700,  77.0300), nil];
-
+    //    NSArray *objects = [NSArray arrayWithObjects:CLLocationCoordinate2DMake(28.6139, 77.2090), CLLocationCoordinate2DMake(18.9750, 72.8258), CLLocationCoordinate2DMake(28.4700,  77.0300), nil];
+    
     for(NSString *key in keys) {
-//        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(28.6139, 77.2090);
+        //        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(28.6139, 77.2090);
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = 28.6139;
         coordinate.longitude = 77.2090;
-     MyLocation *annotation = [[MyLocation alloc] initWithName:@"Description" address:key coordinate:coordinate];
-    [_mapView addAnnotation:annotation];
+        MyLocation *annotation = [[MyLocation alloc] initWithName:@"Description" address:key coordinate:coordinate];
+        [_mapView addAnnotation:annotation];
     }
-//    NSDictionary *dict = [NSDictionary dictionaryWiththObjects:objects
-//                                forKeys:keys];
-//    NSDictionary *dict=@{@"New Delhi": CLLocationCoordinate2DMake(28.6139, 77.2090),
-//                         @"Mumbai":CLLocationCoordinate2DMake(18.9750, 72.8258),
-//                         @"Gurgaon":CLLocationCoordinate2DMake(28.4700, 77.0300),
-//                         };
-//    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(23, 23);
-//    coordinate.latitude = 28.6139;
-//    coordinate.longitude = 77.2090;
-//    for (int index = 0; index < 2; index++) {
-//        MyLocation *annotation = [[MyLocation alloc] initWithName:@"Description" address:@"New Delhi" coordinate:coordinate];
-//        [_mapView addAnnotation:annotation];
-//    }
-//    
+    //    NSDictionary *dict = [NSDictionary dictionaryWiththObjects:objects
+    //                                forKeys:keys];
+    //    NSDictionary *dict=@{@"New Delhi": CLLocationCoordinate2DMake(28.6139, 77.2090),
+    //                         @"Mumbai":CLLocationCoordinate2DMake(18.9750, 72.8258),
+    //                         @"Gurgaon":CLLocationCoordinate2DMake(28.4700, 77.0300),
+    //                         };
+    //    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(23, 23);
+    //    coordinate.latitude = 28.6139;
+    //    coordinate.longitude = 77.2090;
+    //    for (int index = 0; index < 2; index++) {
+    //        MyLocation *annotation = [[MyLocation alloc] initWithName:@"Description" address:@"New Delhi" coordinate:coordinate];
+    //        [_mapView addAnnotation:annotation];
+    //    }
+    //
     for (NSArray *row in data) {
         NSNumber *latitude = [[row objectAtIndex:22]objectAtIndex:1];
         NSNumber *longitude = [[row objectAtIndex:22]objectAtIndex:2];
@@ -166,10 +179,178 @@
 
 /***********************FILTERVIEW CODE*******************************/
 
+-(void) createFilterBoxView {
+    
+    // Dummy images for filterview
+    NSMutableArray *filterArray=[NSMutableArray new];
+    NSMutableArray *arrayOfFilterArray=[NSMutableArray new];
+    for (int index = 0; index < 6; index++) {
+        MapFilterUiModel *uiModel = [[MapFilterUiModel alloc] init];
+        uiModel.checkboxSelectedImage =  [UIImage imageNamed:@"checkbox_check.png"];
+        uiModel.checkboxUnselectedImage  =  [UIImage imageNamed:@"checkbox_normal.png"];
+        uiModel.circleImage = [UIImage imageNamed: @"green-circle.png"];
+        switch (index) {
+            case 0:
+                uiModel.labelText = [NSString stringWithFormat:@"Mega", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 1:
+                uiModel.labelText = [NSString stringWithFormat:@"Medium", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 2:
+                uiModel.labelText = [NSString stringWithFormat:@"Small", index];
+                [filterArray addObject:uiModel];
+                [arrayOfFilterArray addObject:filterArray];
+                filterArray =[NSMutableArray new];
+                break;
+            case 3:
+                uiModel.labelText = [NSString stringWithFormat:@"Listed", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 4:
+                uiModel.labelText = [NSString stringWithFormat:@"Unlisted", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 5:
+                uiModel.labelText = [NSString stringWithFormat:@"Others", index];
+                [filterArray addObject:uiModel];
+                [arrayOfFilterArray addObject:filterArray];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    /*Tag ID for the checkBox, will be the same of filterbox Array. if total elements are 6 , tagId would be 0,1,2,3,4,5 */
+    int tagId = 0;
+    
+    /*get filterbox object from NIB to get the width in advance*/
+    FilterBoxView *boxView = [[[NSBundle mainBundle] loadNibNamed:@"FilterBoxView" owner:nil options:nil] lastObject];
+    int countTotalElements = 0;
+    for (NSArray *filterTitles in arrayOfFilterArray) {
+        for(MapFilterUiModel *filterModel in filterTitles) {
+            countTotalElements = countTotalElements + 1;
+        }
+        
+    }
+    float widthInAdvance = countTotalElements * boxView.frame.size.width;
+    /*calculate the margin left and right margin on basis of total elements in array*/
+    float marginLeftRight = (self.view.frame.size.width - widthInAdvance - SPACE_BETWEEN_WHITE_BOX * arrayOfFilterArray.count - 2 * VIEW_WHITE_FRAME_PADDING)/2 - 20;
+    int runningCoordinateX =0 ;// calculate x by Filterbox placed
+    for (NSArray *filterTitles in arrayOfFilterArray) {
+        float whiteX = marginLeftRight;//white margin left
+        optionView = [[UIView alloc] initWithFrame:CGRectMake(runningCoordinateX + whiteX, self.view.bounds.size.height-150, filterTitles.count * boxView.frame.size.width + VIEW_WHITE_FRAME_PADDING * 2, boxView.frame.size.height)];
+        optionView.backgroundColor = [UIColor whiteColor];
+        [optionView setAlpha:0.8f];
+        [self.view addSubview:optionView];
+        
+        runningCoordinateX = VIEW_WHITE_FRAME_PADDING * 2;// start of FilterBox
+        for(MapFilterUiModel *filterModel in filterTitles) {
+            FilterBoxView *boxView = [[[NSBundle mainBundle] loadNibNamed:@"FilterBoxView" owner:nil options:nil] lastObject];
+            [boxView.uiCheckBox addTarget:self action:@selector(checkBoxStateChanges:) forControlEvents:UIControlEventTouchUpInside];
+            boxView.uiCheckBox.tag = tagId++;
+            [boxView.circle setImage:filterModel.circleImage];
+            [boxView.label setText:filterModel.labelText];
+            boxView.backgroundColor = [UIColor clearColor];
+            
+            CGRect rect = boxView.frame;
+            rect.origin.x = runningCoordinateX;
+            rect.origin.y = 0;
+            boxView.frame = rect;
+            runningCoordinateX = rect.origin.x + boxView.frame.size.width;
+            [optionView addSubview:boxView];
+            whiteX = whiteX + boxView.frame.size.width;
+        }
+        runningCoordinateX = runningCoordinateX + SPACE_BETWEEN_WHITE_BOX;//for middle space between white box
+    }
+}
+
+- (void)checkBoxStateChanges:(UIButton*)btn
+{
+    /*  if (!btn.selected) {
+     [btn setBackgroundImage:[UIImage imageNamed:@"checkbox_check"] forState:UIControlStateNormal];
+     }
+     else{
+     [btn setBackgroundImage:[UIImage imageNamed:@"checkbox_normal"] forState:UIControlStateNormal];
+     }*/
+    btn.selected = !btn.selected;
+    if(btn.selected) {
+        NSLog([NSString stringWithFormat:@"%@ %ld",@"CHECKBOX Selected", (long)btn.tag]);
+        // create filter array from the ServerData array and pass to map for anntation
+    }
+}
+/***********************************END**************************************/
+
 -(void) createFilterView {
     // Dummy images for filterview
     NSMutableArray *filterArray=[NSMutableArray new];
+    NSMutableArray *arrayOfFilterArray=[NSMutableArray new];
     for (int index = 0; index < 6; index++) {
+        MapFilterUiModel *uiModel = [[MapFilterUiModel alloc] init];
+        uiModel.checkboxSelectedImage =  [UIImage imageNamed:@"checkbox_check.png"];
+        uiModel.checkboxUnselectedImage  =  [UIImage imageNamed:@"checkbox_normal.png"];
+        uiModel.circleImage = [UIImage imageNamed: @"green-circle.png"];
+        switch (index) {
+            case 0:
+                uiModel.labelText = [NSString stringWithFormat:@"Mega", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 1:
+                uiModel.labelText = [NSString stringWithFormat:@"Medium", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 2:
+                uiModel.labelText = [NSString stringWithFormat:@"Small", index];
+                [filterArray addObject:uiModel];
+                [arrayOfFilterArray addObject:filterArray];
+                filterArray =[NSMutableArray new];
+                break;
+            case 3:
+                uiModel.labelText = [NSString stringWithFormat:@"Listed", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 4:
+                uiModel.labelText = [NSString stringWithFormat:@"Unlisted", index];
+                [filterArray addObject:uiModel];
+                break;
+            case 5:
+                uiModel.labelText = [NSString stringWithFormat:@"Others", index];
+                [filterArray addObject:uiModel];
+                [arrayOfFilterArray addObject:filterArray];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    //    FilterView *filterView = [[FilterView alloc] initCustomWithFrame:_mapView.frame];
+    //    [filterView setUserInteractionEnabled:YES];
+    //    [filterView setFilters:arrayOfFilterArray];
+    //    UIView *uiView = [filterView createFilterViewWithArray:filterArray];
+    //    [filterView addSubview:uiView];
+    //    [uiView setFrame:uiView.frame];
+    
+    //    [self.mapView addSubview:filterView];
+    
+    //    [filterView createFilterView:[filterArray subarrayWithRange:NSMakeRange(0, 3)]];
+    //    [_mapView addSubview:filterView ];
+    //
+    //    filterArray = [filterArray subarrayWithRange:NSMakeRange(3, 3)];
+    //
+    //    filterView=[[FilterView alloc]initWithFrame:CGRectMake(filterView.frame.size.width+25, screenRect.size.height-80, screenWidth - FILTER_VIEW_WIDTH- 40, FILTER_VIEW_HEIGHT)];
+    //    //    [filterView setBackgroundColor:[UIColor clearColor]];
+    //    [filterView createFilterView:filterArray];
+    //    [_mapView addSubview:filterView];
+    
+}
+
+-(NSMutableDictionary*) createDataWithDictionary{
+    NSMutableDictionary *testDictionary = [[NSMutableDictionary alloc] init];
+    // Dummy images for filterview
+    NSMutableArray *filterArray=[NSMutableArray new];
+    for (int index = 0; index < 3; index++) {
         MapFilterUiModel *uiModel = [[MapFilterUiModel alloc] init];
         uiModel.checkboxSelectedImage =  [UIImage imageNamed:@"checkbox_check.png"];
         uiModel.checkboxUnselectedImage  =  [UIImage imageNamed:@"checkbox_normal.png"];
@@ -184,15 +365,6 @@
             case 2:
                 uiModel.labelText = [NSString stringWithFormat:@"Small", index];
                 break;
-            case 3:
-                uiModel.labelText = [NSString stringWithFormat:@"Listed", index];
-                break;
-            case 4:
-                uiModel.labelText = [NSString stringWithFormat:@"Unlisted", index];
-                break;
-            case 5:
-                uiModel.labelText = [NSString stringWithFormat:@"Others", index];
-                break;
                 
             default:
                 break;
@@ -200,26 +372,47 @@
         
         [filterArray addObject:uiModel];
     }
+    NSMutableArray *filter=[NSMutableArray new];
+    [filter addObject:@"ok"];
+    [testDictionary setObject: filter
+                       forKey:[NSNumber numberWithInt:0]];
+    [testDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+     {
+         
+         NSLog(@"%@:%@",key,obj);
+         //       UIView *view = [ self createFilterViewWithArray:obj];
+         //        [viewHolder addSubview:view];
+         
+     }];
+    NSLog(@"Test dictionary: %@", testDictionary);
     
-    //to get the screen width
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    // creating the object of Filterview
-    FilterView *filterView=[[FilterView alloc]initWithFrame:CGRectMake(20, screenRect.size.height-80, FILTER_VIEW_WIDTH, FILTER_VIEW_HEIGHT)];
-//    [filterView setBackgroundColor:[UIColor clearColor]];
-//    [filterView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.7]];
-//    filterView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3];
-//    filterView.opaque = NO;
-    [filterView createFilterView:[filterArray subarrayWithRange:NSMakeRange(0, 3)]];
-    [_mapView addSubview:filterView ];
+    //    filterArray=[NSMutableArray new];
+    //     [filterArray init];
+    //    for (int index = 0; index < 3; index++) {
+    //        MapFilterUiModel *uiModel = [[MapFilterUiModel alloc] init];
+    //        uiModel.checkboxSelectedImage =  [UIImage imageNamed:@"checkbox_check.png"];
+    //        uiModel.checkboxUnselectedImage  =  [UIImage imageNamed:@"checkbox_normal.png"];
+    //        uiModel.circleImage = [UIImage imageNamed: @"green-circle.png"];
+    //        switch (index) {
+    //            case 0:
+    //                uiModel.labelText = [NSString stringWithFormat:@"Listed", index];
+    //                break;
+    //            case 1:
+    //                uiModel.labelText = [NSString stringWithFormat:@"Unlisted", index];
+    //                break;
+    //            case 2:
+    //                uiModel.labelText = [NSString stringWithFormat:@"Others", index];
+    //                break;
+    //
+    //            default:
+    //                break;
+    //        }
+    //        [filterArray addObject:uiModel];
+    //    }
+    //    [testDictionary setObject: filterArray
+    //                       forKey:[NSNumber numberWithInt:1]];
+    NSLog(@"Test dictionary: %@", testDictionary);
     
-    filterArray = [filterArray subarrayWithRange:NSMakeRange(3, 3)];
-    
-    filterView=[[FilterView alloc]initWithFrame:CGRectMake(filterView.frame.size.width+25, screenRect.size.height-80, screenWidth - FILTER_VIEW_WIDTH- 40, FILTER_VIEW_HEIGHT)];
-//    [filterView setBackgroundColor:[UIColor clearColor]];
-    [filterView createFilterView:filterArray];
-    [_mapView addSubview:filterView];
-
 }
 
 

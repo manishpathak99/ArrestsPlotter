@@ -21,46 +21,62 @@
 #define CHECKBOX_FRAME_WIDTH_HEIGHT 12
 #define LABEL_FRAME_MARGIN_HEIGHT 12
 
+#define VIEW_FRAME_MARGIN_LEFT 12
+#define VIEW_FRAME_MARGIN_RIGHT 12
+#define VIEW_FRAME_MARGIN_TOP 0
+#define VIEW_FRAME_MARGIN_BOTTOM 80
+
 #import <Foundation/Foundation.h>
 #import "FilterView.h"
 #import "MapFilterUiModel.h"
 
-@implementation FilterView
-
-@synthesize x;
-@synthesize y;
-@synthesize width;
-@synthesize height;
-@synthesize margin;
+@implementation FilterView {
+    int x;
+    int y;
+    CGFloat width;
+    CGFloat height;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-         margin = 0;
-        x = 0;
-        y = 0;
-        width = frame.size.width;
-        height = frame.size.height;
-        self.opaque = NO;
-       
+        //        margin = 0;
+        //        x = 0;
+        //        y = 0;
+        //        width = frame.size.width;
+        //        height = frame.size.height;
+        
     }
     return self;
 }
 
--(id)initCustom {
+-(id)initCustomWithFrame:(CGRect)frame
+{
+    int x = frame.origin.x + VIEW_FRAME_MARGIN_LEFT;
+    int y = frame.size.height - VIEW_FRAME_MARGIN_BOTTOM;
+    CGFloat width = frame.size.width - VIEW_FRAME_MARGIN_LEFT - VIEW_FRAME_MARGIN_RIGHT;
+    CGFloat height = 30;
     
+    CGRect newFrame = CGRectMake(x, y, width, height);
+    
+    self = [super initWithFrame:newFrame];
+    if (self) {
+        [self setFrame:newFrame];
+        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setAlpha:0.8f];
+    }
     return self;
 }
 
--(void) drawRect: (CGRect) rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    UIColor * redColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.9];
-    CGContextSetFillColorWithColor(context, redColor.CGColor);
-    CGContextFillRect(context, self.bounds);
-}
+//-(void) drawRect: (CGRect) rect
+//{
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    UIColor * redColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.9];
+//    CGContextSetFillColorWithColor(context, redColor.CGColor);
+//    CGContextFillRect(context, self.bounds);
+//}
 
 
 - (UIView*) createCheckbox:(UIImage*)uiImageSelected  uiImageUnselected:(UIImage*)uiImageUnselected isSelected:(BOOL) isSelected x:(int) x y:(int) y{
@@ -117,7 +133,7 @@
     NSLog(@"width:  %f", yourLabelSize.size.width);
     NSLog(@"height:  %f", yourLabelSize.size.height);
     
-  UILabel  *label =[[UILabel alloc] initWithFrame:CGRectMake(x,y, yourLabelSize.size.width,yourLabelSize.size.height )];
+    UILabel  *label =[[UILabel alloc] initWithFrame:CGRectMake(x,y, yourLabelSize.size.width,yourLabelSize.size.height )];
     [label setText:labelText];//Set text in label.
     [label setTextColor:[UIColor blackColor]];//Set text color in label.
     [label setTextAlignment:NSTextAlignmentNatural];//Set text alignment in label.
@@ -126,54 +142,79 @@
     [label setNumberOfLines:1];//Set number of lines in label.
     [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
     //    [label.layer setCornerRadius:25.0];//Set corner radius of label to change the shape.
-//        [label.layer setBorderWidth:2.0f];//Set border width of label.
+    //        [label.layer setBorderWidth:2.0f];//Set border width of label.
     //    [label setClipsToBounds:YES];//Set its to YES for Corner radius to work.
     //    [label.layer setBorderColor:[UIColor blackColor].CGColor];//Set Border color.
     
-
+    
     //adjust the label the the new height.
-//       CGRect newFrame = label.frame;
-//    newFrame.size.height = expectedLabelSize.height;
-//    newFrame.size.width = widthIs;
-//    newFrame.origin.x = x;
-//    newFrame.origin.y = y;
-//    label.frame = newFrame;
-//    [label setFrame:newFrame];
+    //       CGRect newFrame = label.frame;
+    //    newFrame.size.height = expectedLabelSize.height;
+    //    newFrame.size.width = widthIs;
+    //    newFrame.origin.x = x;
+    //    newFrame.origin.y = y;
+    //    label.frame = newFrame;
+    //    [label setFrame:newFrame];
     return label;
 }
 
 
-- (UIView*) createFilterView:(NSMutableArray*)filterArray{
-    int oldy = y;
+- (UIView*) createFilterViewWithArray:(NSArray*)filterArray{
+    
+    UIView* filterBox = [[UIView alloc] init];
+    
+    int x   =   0;
+    int y = 0;
+//    CGFloat width = 100.0f;
+    
     for(MapFilterUiModel *filterModel in filterArray) {
+        UIView *filterControl = [[UIView alloc] init];
+        [filterControl setUserInteractionEnabled:NO];
         UIImage *uiImageSelected =  filterModel.checkboxSelectedImage;
         UIImage *uiImageUnselected =  filterModel.checkboxUnselectedImage;
         UIImage *circleImage = filterModel.circleImage;
         NSString* labelText = filterModel.labelText;
-
-        /**********  creating the checkbox******************/
-        x   =   x   +   CHECKBOX_MARGIN_LEFT;
-        y   =   oldy+ (height-CHECKBOX_FRAME_WIDTH_HEIGHT)/2;
+        
         UIView *checkboxView =  [self createCheckbox:uiImageSelected uiImageUnselected:uiImageUnselected isSelected:true x:x y:y];
-        /********** creating the circle********************/
-        x                   =   x+checkboxView.frame.size.width+ CHECKBOX_MARGIN_RIGHT + CIRCLE_MARGIN_LEFT;
-        y                   =   oldy+(height - CIRCLE_FRAME_WIDTH_HEIGHT)/2;
+        x                   =   x +checkboxView.frame.size.width+ CHECKBOX_MARGIN_RIGHT + CIRCLE_MARGIN_LEFT;
         UIView *circleView  =   [self createCircle:circleImage x:x y:y];
-        
-        /**********creating the Label************************/
         x                   =   x + circleView.frame.size.width + CIRCLE_MARGIN_RIGHT + LABEL_MARGIN_LEFT;
-        y                   =   oldy + height;
-        UIView *labelView = [self createLabel:labelText x:x y:y];
-        x= x + labelView.frame.size.width + LABEL_MARGIN_RIGHT;
-        
-        /********** Adding views to all view*****************/
-        [self addSubview:checkboxView];
-        [self addSubview:circleView];
-        [self addSubview:labelView];
-        y=oldy;
+        UIView *labelView   =   [self createLabel:labelText x:x y:y];
+        x                   =   x + labelView.frame.size.width + LABEL_MARGIN_RIGHT;
+        int filterControlWidth = CHECKBOX_FRAME_WIDTH_HEIGHT + CIRCLE_FRAME_WIDTH_HEIGHT +labelView.frame.size.width + CHECKBOX_MARGIN_RIGHT + CIRCLE_MARGIN_LEFT +CIRCLE_MARGIN_RIGHT + LABEL_MARGIN_LEFT + LABEL_MARGIN_RIGHT;
+        [filterControl setFrame:CGRectMake(x, y, filterControlWidth, checkboxView.frame.size.height + circleView.frame.size.height + labelView.frame.size.height)];
 
+        self->x = x;
+        self->y = y;
+        self->width = filterControl.frame.size.width;
+        self->height = filterControl.frame.size.height;
+        [filterControl addSubview:checkboxView];
+        [filterControl addSubview:circleView];
+        [filterControl addSubview:labelView];
+        
+        [filterBox addSubview:filterControl];
+        [filterBox setBackgroundColor:[UIColor greenColor]];
     }
-    return self;
+    return filterBox;
+}
+
+
+- (void)createFilterViewWithArrayData:(NSArray*)filterArray{
+    
+    for (NSArray *filterTitles in filterArray) {
+
+        UIView *filterBox= [self createFilterViewWithArray:filterTitles];
+        
+        [filterBox setFrame:CGRectMake(x, y, width, height)];
+        [filterBox setBackgroundColor:[UIColor blueColor]];
+        [self addSubview: filterBox];
+    }
+}
+
+
+-(void)setFilters:(NSArray *)filters {
+    _filters = filters;
+    [self createFilterViewWithArrayData:filters];
 }
 
 @end

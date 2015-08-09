@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263330791B777BD100D5E1D6 /* FilterBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 263330781B777BD100D5E1D6 /* FilterBoxView.xib */; };
+		2633307C1B777FD600D5E1D6 /* FilterBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2633307B1B777FD600D5E1D6 /* FilterBoxView.m */; };
 		26C4E6FA1B73829F00415FA4 /* MapFilterUiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4E6F91B73829F00415FA4 /* MapFilterUiModel.m */; };
 		26C4E6FD1B73830800415FA4 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4E6FC1B73830800415FA4 /* FilterView.m */; };
 		26C4E7041B73845500415FA4 /* green-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4E7011B73845500415FA4 /* green-circle.png */; };
@@ -45,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		263330781B777BD100D5E1D6 /* FilterBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterBoxView.xib; sourceTree = "<group>"; };
+		2633307A1B777FD600D5E1D6 /* FilterBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBoxView.h; sourceTree = "<group>"; };
+		2633307B1B777FD600D5E1D6 /* FilterBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterBoxView.m; sourceTree = "<group>"; };
 		26C4E6F81B73829F00415FA4 /* MapFilterUiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapFilterUiModel.h; sourceTree = "<group>"; };
 		26C4E6F91B73829F00415FA4 /* MapFilterUiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapFilterUiModel.m; sourceTree = "<group>"; };
 		26C4E6FB1B73830800415FA4 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
@@ -220,6 +225,9 @@
 				A7CBA55316F35BA9001972D7 /* MainStoryboard.storyboard */,
 				A7CBA55616F35BA9001972D7 /* ArrestsPlotterViewController.h */,
 				A7CBA55716F35BA9001972D7 /* ArrestsPlotterViewController.m */,
+				2633307A1B777FD600D5E1D6 /* FilterBoxView.h */,
+				2633307B1B777FD600D5E1D6 /* FilterBoxView.m */,
+				263330781B777BD100D5E1D6 /* FilterBoxView.xib */,
 				A7CBA54216F35BA9001972D7 /* Supporting Files */,
 				A7CBA5EE16F374A8001972D7 /* MyLocation.h */,
 				A7CBA5EF16F374A8001972D7 /* MyLocation.m */,
@@ -297,6 +305,7 @@
 			files = (
 				A7CBA54616F35BA9001972D7 /* InfoPlist.strings in Resources */,
 				A7CBA54E16F35BA9001972D7 /* Default.png in Resources */,
+				263330791B777BD100D5E1D6 /* FilterBoxView.xib in Resources */,
 				A7CBA55016F35BA9001972D7 /* Default@2x.png in Resources */,
 				26C4E7081B73852800415FA4 /* checkbox_normal.png in Resources */,
 				26C4E7071B73852800415FA4 /* checkbox_check.png in Resources */,
@@ -324,6 +333,7 @@
 				A71F048B16F38C010090D82E /* ASIDataDecompressor.m in Sources */,
 				A71F048C16F38C010090D82E /* ASIDownloadCache.m in Sources */,
 				26C4E6FD1B73830800415FA4 /* FilterView.m in Sources */,
+				2633307C1B777FD600D5E1D6 /* FilterBoxView.m in Sources */,
 				A71F048D16F38C010090D82E /* ASIFormDataRequest.m in Sources */,
 				A71F048E16F38C010090D82E /* ASIHTTPRequest.m in Sources */,
 				A71F048F16F38C010090D82E /* ASIInputStream.m in Sources */,
@@ -419,6 +429,7 @@
 				GCC_PREFIX_HEADER = "ArrestsPlotter/ArrestsPlotter-Prefix.pch";
 				INFOPLIST_FILE = "ArrestsPlotter/ArrestsPlotter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,6 +441,7 @@
 				GCC_PREFIX_HEADER = "ArrestsPlotter/ArrestsPlotter-Prefix.pch";
 				INFOPLIST_FILE = "ArrestsPlotter/ArrestsPlotter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

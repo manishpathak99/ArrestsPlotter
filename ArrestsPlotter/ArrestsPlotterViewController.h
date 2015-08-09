@@ -10,6 +10,9 @@
 #import <MapKit/MapKit.h>
 
 @interface ArrestsPlotterViewController : UIViewController <MKMapViewDelegate>
+{
+    UIView *optionView;
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
